@@ -18,7 +18,7 @@ def login():
 
 def show_all_songs():
     print('''
-    1. 🎧  Shape of You        ▶
+    1. 🎧  Shape of You        ⏮  ▶  ⏭
     2. 🎧  Happy               ▶
     3. 🎧  Uptown Funk         ▶
     4. 🎧  Let Her Go          ▶
@@ -35,7 +35,7 @@ def search_by_mood():
         print('''    
 🎵 Happy Songs:
                          
-🎧  Shape of You     ▶
+🎧  Shape of You     ⏮  ▶  ⏭
 🎧  Happy            ▶
 🎧  Uptown Funk      ▶
 ''')
@@ -43,7 +43,7 @@ def search_by_mood():
         print('''
 🎵 Sad Songs:
               
-🎧  Let Her Go       ▶
+🎧  Let Her Go       ⏮  ▶  ⏭
 🎧  Someone Like You ▶
 🎧  Fix You          ▶
 ''')
@@ -51,7 +51,7 @@ def search_by_mood():
         print('''
 🎵 Angry Songs:
               
-🎧  Believer         ▶
+🎧  Believer         ⏮  ▶  ⏭
 🎧  Stronger         ▶
 🎧  Numb             ▶
 ''')
@@ -77,12 +77,25 @@ def fav_songs():
     
     if add_fav_song:  
         My_Favorites.append(add_fav_song)
-        print("song Added to Favorites ✅")
+        print("song Added to Favorites ✅\n")
 
     if not My_Favorites:
         print("No favorites !")
     else:
-        print("My Favorites:", My_Favorites)
+        print("My Favorites:")
+        for i,songs in enumerate(My_Favorites):
+            if i==0:
+                # print(f"\n🎧  {songs[0]}       ⏮  ▶  ⏭")
+                print(f"\n🎧  {songs}      ⏮  ▶  ⏭")
+
+            else:
+                # print(f"\n🎧  {songs[0,]}      ▶")
+                print(f"🎧  {songs}      ▶")
+
+               
+            # print("My Favorites:", songs)
+
+        # print("My Favorites:", My_Favorites)
 
 
     # if not My_Favorites:
